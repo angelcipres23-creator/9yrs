@@ -1,0 +1,1516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Anniversary Scrapbook ♡</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --cream-bg: #FFFDF5;
+      --yellow-stripe: #FFF6C3;
+      --lilac-paper: #D5BCF0;
+      --lilac-dark: #9B72CF;
+      --purple-deep: #6B3FA0;
+      --purple-outline: #7E52B3;
+      --pink-accent: #F48FB1;
+      --paper-cream: #FFFDF8;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background-color: var(--cream-bg);
+      color: var(--purple-deep);
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* Pastel Striped Scrapbook Background */
+    .scrapbook-stripes {
+      background-color: #FFFDF5;
+      background-image: repeating-linear-gradient(
+        90deg,
+        #FFFDF5 0px,
+        #FFFDF5 24px,
+        #FFF6C3 24px,
+        #FFF6C3 48px
+      );
+    }
+
+    /* Lilac Textured Paper with Noise Grain */
+    .lilac-paper-bg {
+      background-color: #D5BCF0;
+      background-image: 
+        radial-gradient(rgba(255, 255, 255, 0.25) 1px, transparent 0),
+        radial-gradient(rgba(126, 82, 179, 0.12) 1px, transparent 0);
+      background-size: 20px 20px;
+      background-position: 0 0, 10px 10px;
+    }
+
+    /* Fonts */
+    .font-bubbly {
+      font-family: 'Fredoka', sans-serif;
+    }
+    .font-script {
+      font-family: 'Caveat', cursive;
+    }
+
+    /* Bubbly Outlined Title Text */
+    .bubbly-title {
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 700;
+      color: #6B3FA0;
+      text-shadow:
+        -2px -2px 0 #FFFFFF,
+         2px -2px 0 #FFFFFF,
+        -2px  2px 0 #FFFFFF,
+         2px  2px 0 #FFFFFF,
+         0px  4px 8px rgba(107, 63, 160, 0.18);
+    }
+
+    /* Torn Paper Edge SVG Masks / Dividers */
+    .torn-vertical-edge {
+      filter: drop-shadow(-6px 0px 8px rgba(93, 58, 138, 0.18));
+    }
+
+    /* Scalloped Circular Photo Frame */
+    .scallop-frame {
+      background: #C7A6EB;
+      border-radius: 50%;
+      padding: 14px;
+      box-shadow: 0 10px 25px rgba(107, 63, 160, 0.22);
+      position: relative;
+      border: 3px dashed #FFFFFF;
+    }
+
+    /* Washi Tape Strip */
+    .washi-tape {
+      background-color: rgba(203, 168, 240, 0.78);
+      background-image: 
+        linear-gradient(90deg, rgba(255,255,255,0.45) 50%, transparent 50%),
+        linear-gradient(rgba(255,255,255,0.45) 50%, transparent 50%);
+      background-size: 10px 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    }
+
+    /* Keypad Circle Button */
+    .keypad-btn {
+      width: 58px;
+      height: 58px;
+      border-radius: 9999px;
+      background: #FFFFFF;
+      color: #6B3FA0;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(107, 63, 160, 0.16), inset 0 -2px 0 rgba(213, 188, 240, 0.6);
+      transition: transform 0.12s ease, background-color 0.15s ease, box-shadow 0.12s ease;
+      cursor: pointer;
+      user-select: none;
+    }
+    .keypad-btn:hover {
+      background-color: #FAF5FF;
+      transform: translateY(-2px);
+    }
+    .keypad-btn:active {
+      transform: translateY(2px) scale(0.95);
+      box-shadow: 0 2px 4px rgba(107, 63, 160, 0.16);
+    }
+    .keypad-num {
+      border-bottom: 2.5px solid #6B3FA0;
+      line-height: 1.05;
+      padding: 0 2px;
+    }
+
+    /* Passcode Dot Box */
+    .passcode-box {
+      width: 52px;
+      height: 44px;
+      border-radius: 12px;
+      border: 2.5px solid #9B72CF;
+      background: rgba(255, 255, 255, 0.65);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: inset 0 2px 4px rgba(107, 63, 160, 0.08);
+      transition: all 0.2s ease;
+    }
+    .passcode-box.filled {
+      background: #FFFFFF;
+      border-color: #6B3FA0;
+      transform: scale(1.04);
+    }
+
+    /* Cloud Pill Banner */
+    .cloud-banner {
+      background: #FFFFFF;
+      border: 3px solid #A47ED6;
+      border-radius: 9999px;
+      box-shadow: 0 6px 0 #D5BCF0, 0 10px 20px rgba(107, 63, 160, 0.15);
+    }
+
+    /* Gift Item Interactive Card */
+    .gift-item-btn {
+      transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.25s ease;
+      cursor: pointer;
+    }
+    .gift-item-btn:hover {
+      transform: translateY(-10px) scale(1.05) rotate(-1.5deg);
+      filter: drop-shadow(0 14px 18px rgba(107, 63, 160, 0.22));
+    }
+    .gift-item-btn:active {
+      transform: scale(0.97);
+    }
+
+    /* Lined Stationery Paper */
+    .lined-paper {
+      background-color: #FFFDF7;
+      background-image: repeating-linear-gradient(
+        transparent,
+        transparent 31px,
+        #E6D7F7 31px,
+        #E6D7F7 32px
+      );
+      line-height: 32px;
+    }
+
+    /* Animations */
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20% { transform: translateX(-10px); }
+      40% { transform: translateX(10px); }
+      60% { transform: translateX(-7px); }
+      80% { transform: translateX(7px); }
+    }
+    .animate-shake {
+      animation: shake 0.42s ease-in-out;
+    }
+
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-6px) rotate(2deg); }
+    }
+    .animate-float {
+      animation: floatSlow 3.6s ease-in-out infinite;
+    }
+
+    @keyframes spinReel {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .reel-spinning {
+      animation: spinReel 2.8s linear infinite;
+      transform-origin: center;
+    }
+
+    @keyframes fadeInScale {
+      from { opacity: 0; transform: scale(0.94) translateY(8px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .screen-enter {
+      animation: fadeInScale 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 7px;
+      height: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FFFDF5;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D5BCF0;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="scrapbook-stripes relative min-h-screen flex flex-col justify-between selection:bg-purple-200">
+
+  <!-- Decorative Scattered Stars Layer -->
+  <div id="stars-layer" class="pointer-events-none fixed inset-0 overflow-hidden z-0" aria-hidden="true"></div>
+
+  <!-- Top Utility Controls (Customize Studio + Hint) -->
+  <div class="fixed top-3 left-3 right-3 z-40 flex items-center justify-between pointer-events-none">
+    <button
+      id="open-customizer-btn"
+      onclick="openCustomizer()"
+      class="pointer-events-auto flex items-center gap-1.5 bg-white/90 hover:bg-white text-[#6B3FA0] border-2 border-[#B996E3] px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-bubbly font-medium shadow-md transition transform hover:scale-105"
+      title="Customize photos, passcode, letter & song"
+    >
+      <span>✨ Customize Gift</span>
+    </button>
+
+    <button
+      id="nav-home-btn"
+      onclick="goToScreen(1)"
+      class="hidden pointer-events-auto flex items-center gap-1 bg-white/90 hover:bg-white text-[#6B3FA0] border-2 border-[#B996E3] px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-bubbly font-medium shadow-md transition transform hover:scale-105"
+    >
+      <span>🔒 Lock</span>
+    </button>
+  </div>
+
+  <!-- ========================================================= -->
+  <!-- SCREEN 1: PASSCODE LOCK SCREEN (Matches Image 1)          -->
+  <!-- ========================================================= -->
+  <main id="screen-1" class="relative z-10 flex-1 flex flex-col lg:flex-row min-h-screen w-full overflow-hidden">
+    
+    <!-- Left Half: Hanging Scalloped Couple Photo Frame -->
+    <section class="w-full lg:w-1/2 flex flex-col items-center justify-center pt-14 pb-6 lg:py-8 px-4 relative">
+      <!-- Hanging Twine String from Top -->
+      <div class="hidden lg:block w-1 h-28 bg-gradient-to-b from-[#B68D65] to-[#C8A17A] -mb-3 rounded-full shadow-sm"></div>
+      
+      <!-- Twine Bow SVG -->
+      <div class="relative z-20 -mb-5 animate-float">
+        <svg width="115" height="62" viewBox="0 0 120 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Left Loop -->
+          <path d="M58 32C42 12 14 10 12 28C10 44 38 42 58 32Z" stroke="#B68D65" stroke-width="5.5" fill="#DFC3A4" fill-opacity="0.45" stroke-linecap="round"/>
+          <!-- Right Loop -->
+          <path d="M62 32C78 12 106 10 108 28C110 44 82 42 62 32Z" stroke="#B68D65" stroke-width="5.5" fill="#DFC3A4" fill-opacity="0.45" stroke-linecap="round"/>
+          <!-- Tails -->
+          <path d="M56 35C44 48 32 56 22 60" stroke="#B68D65" stroke-width="5" stroke-linecap="round"/>
+          <path d="M64 35C76 48 88 56 98 60" stroke="#B68D65" stroke-width="5" stroke-linecap="round"/>
+          <!-- Center Knot -->
+          <rect x="53" y="25" width="14" height="14" rx="6" fill="#C79F77" stroke="#9C734B" stroke-width="2.5"/>
+        </svg>
+      </div>
+
+      <!-- Scalloped Lavender Frame -->
+      <div class="relative group">
+        <!-- Decorative Scallop SVG Ring -->
+        <div class="relative w-64 h-64 sm:w-76 sm:h-76 md:w-80 md:h-80 flex items-center justify-center">
+          <svg class="absolute inset-0 w-full h-full drop-shadow-lg" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Outer Scalloped Flower Circle -->
+            <path d="M160 10C173 10 183 19 194 23C205 27 219 24 229 31C239 38 242 52 250 61C258 70 272 74 278 85C284 96 279 110 283 121C287 132 299 142 299 155C299 168 287 178 283 189C279 200 284 214 278 225C272 236 258 240 250 249C242 258 239 272 229 279C219 286 205 283 194 287C183 291 173 300 160 300C147 300 137 291 126 287C115 283 101 286 91 279C81 272 78 258 70 249C62 240 48 236 42 225C36 214 41 200 37 189C33 178 21 168 21 155C21 142 33 132 37 121C41 110 36 96 42 85C48 74 62 70 70 61C78 52 81 38 91 31C101 24 115 27 126 23C137 19 147 10 160 10Z" fill="#C9A8EE"/>
+            <!-- Dashed White Inner Stitch -->
+            <circle cx="160" cy="155" r="123" stroke="#FFFFFF" stroke-width="2.5" stroke-dasharray="7 6"/>
+          </svg>
+
+          <!-- Circular Couple Photo -->
+          <div class="relative w-52 h-52 sm:w-60 sm:h-60 rounded-full overflow-hidden border-4 border-white shadow-inner bg-purple-100 z-10">
+            <img
+              id="main-couple-photo"
+              src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=600&q=80"
+              onerror="this.src='https://placehold.co/400x400/E9D8FD/6B3FA0?text=Us+%E2%99%A1'"
+              alt="Our Anniversary Photo"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <!-- Cute Daisy Flower Sticker on Bottom Right of Frame -->
+          <div class="absolute bottom-2 right-3 sm:bottom-3 sm:right-4 z-20 drop-shadow-md transform rotate-12">
+            <svg width="64" height="58" viewBox="0 0 70 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Leaves -->
+              <ellipse cx="16" cy="40" rx="12" ry="6" transform="rotate(-25 16 40)" fill="#7CB342"/>
+              <ellipse cx="54" cy="40" rx="12" ry="6" transform="rotate(25 54 40)" fill="#7CB342"/>
+              <!-- Petals -->
+              <ellipse cx="35" cy="14" rx="7" ry="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+              <ellipse cx="35" cy="48" rx="7" ry="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+              <ellipse cx="18" cy="31" rx="12" ry="7" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+              <ellipse cx="52" cy="31" rx="12" ry="7" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+              <ellipse cx="23" cy="19" rx="7" ry="11" transform="rotate(-45 23 19)" fill="#FFFFFF"/>
+              <ellipse cx="47" cy="43" rx="7" ry="11" transform="rotate(-45 47 43)" fill="#FFFFFF"/>
+              <ellipse cx="47" cy="19" rx="7" ry="11" transform="rotate(45 47 19)" fill="#FFFFFF"/>
+              <ellipse cx="23" cy="43" rx="7" ry="11" transform="rotate(45 23 43)" fill="#FFFFFF"/>
+              <!-- Center -->
+              <circle cx="35" cy="31" r="8" fill="#FBC02D"/>
+              <circle cx="33" cy="29" r="2.5" fill="#FFF59D"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Subtle Anniversary Date Caption Pill -->
+      <div id="couple-caption-badge" class="mt-2 bg-white/85 border-2 border-[#D5BCF0] px-4 py-1 rounded-full text-sm font-bubbly text-[#7E52B3] shadow-sm">
+        Happy Anniversary ♡
+      </div>
+    </section>
+
+    <!-- Right Half: Torn Lilac Paper + Passcode Keypad -->
+    <section class="w-full lg:w-1/2 relative flex flex-col items-center justify-center py-8 px-6 lg:pl-14">
+      
+      <!-- Torn Paper Edge SVG (Desktop Left Edge) -->
+      <svg class="hidden lg:block absolute left-0 top-0 h-full w-10 text-[#D5BCF0] torn-vertical-edge z-10" viewBox="0 0 40 800" preserveAspectRatio="none">
+        <path d="M40,0 L18,0 L24,28 L10,55 L22,88 L8,120 L25,155 L12,190 L26,225 L9,265 L23,300 L11,340 L27,380 L10,420 L24,460 L12,500 L26,540 L9,580 L23,620 L11,665 L25,710 L12,755 L20,800 L40,800 Z" fill="currentColor"/>
+      </svg>
+
+      <!-- Torn Paper Edge SVG (Mobile Top Edge) -->
+      <svg class="block lg:hidden absolute top-0 left-0 w-full h-7 text-[#D5BCF0] -mt-5 z-10" viewBox="0 0 800 30" preserveAspectRatio="none">
+        <path d="M0,30 L0,12 L35,20 L75,8 L120,22 L165,10 L215,21 L260,7 L315,19 L365,9 L420,22 L475,8 L530,20 L585,9 L640,21 L695,10 L750,19 L800,8 L800,30 Z" fill="currentColor"/>
+      </svg>
+
+      <!-- Lilac Paper Background Fill -->
+      <div class="lilac-paper-bg absolute inset-0 lg:left-7 z-0"></div>
+
+      <!-- Keypad Content Container -->
+      <div class="relative z-20 flex flex-col items-center w-full max-w-xs">
+        
+        <!-- Taped Paper Scrap Header -->
+        <div class="relative mb-5">
+          <!-- Purple Gingham Washi Tape -->
+          <div class="washi-tape w-24 h-5 mx-auto -mb-2.5 relative z-10 transform -rotate-2 rounded-xs"></div>
+          <!-- Cream Paper Scrap -->
+          <div class="bg-[#FFFDF7] px-7 py-2 rounded-sm shadow-md border border-[#EDE2FA] transform -rotate-1">
+            <h1 class="font-script text-3xl sm:text-4xl font-bold text-[#4A2C6D] tracking-wide flex items-center gap-1.5">
+              Enter a passcode
+              <span class="text-base opacity-75">🐾</span>
+            </h1>
+          </div>
+        </div>
+
+        <!-- 4 Passcode Display Boxes -->
+        <div id="passcode-boxes" class="flex items-center gap-3 mb-2">
+          <div class="passcode-box" data-index="0"></div>
+          <div class="passcode-box" data-index="1"></div>
+          <div class="passcode-box" data-index="2"></div>
+          <div class="passcode-box" data-index="3"></div>
+        </div>
+
+        <!-- Passcode Feedback / Hint Message -->
+        <div class="h-6 mb-3 flex items-center justify-center">
+          <p id="passcode-feedback" class="text-xs font-bubbly font-medium text-[#5A328A] bg-white/60 px-3 py-0.5 rounded-full">
+            Hint: <span id="passcode-hint-text">Our special date (1119)</span>
+          </p>
+        </div>
+
+        <!-- 3x4 Circular Number Keypad -->
+        <div class="grid grid-cols-3 gap-3.5 sm:gap-4">
+          <button type="button" class="keypad-btn" onclick="pressDigit('1')"><span class="keypad-num">1</span></button>
+          <button type="button" class="keypad-btn" onclick="pressDigit('2')"><span class="keypad-num">2</span></button>
+          <button type="button" class="keypad-btn" onclick="pressDigit('3')"><span class="keypad-num">3</span></button>
+          <button type="button" class="keypad-btn" onclick="pressDigit('4')"><span class="keypad-num">4</span></button>
+          <button type="button" class="keypad-btn" onclick="pressDigit('5')"><span class="keypad-num">5</span></button>
+          <button type="button" class="keypad-btn" onclick="pressDigit('6')"><span class="keypad-num">6</span></button>
+          <button type="button" class="keypad-btn" onclick="pressDigit('7')"><span class="keypad-num">7</span></button>
+          <button type="button" class="keypad-btn" onclick="pressDigit('8')"><span class="keypad-num">8</span></button>
+          <button type="button" class="keypad-btn" onclick="pressDigit('9')"><span class="keypad-num">9</span></button>
+          
+          <!-- Backspace Button -->
+          <button type="button" class="keypad-btn" onclick="deleteDigit()" aria-label="Delete digit">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6B3FA0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"></path>
+              <line x1="18" y1="9" x2="12" y2="15"></line>
+              <line x1="12" y1="9" x2="18" y2="15"></line>
+            </svg>
+          </button>
+
+          <!-- 0 Button -->
+          <button type="button" class="keypad-btn" onclick="pressDigit('0')"><span class="keypad-num">0</span></button>
+
+          <!-- Submit Checkmark Button -->
+          <button type="button" class="keypad-btn bg-[#FAF5FF]" onclick="checkPasscode()" aria-label="Submit passcode">
+            <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#6B3FA0" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================= -->
+  <!-- SCREEN 2: "WANNA SEE IT?" TEASER SCREEN (Matches Image 3) -->
+  <!-- ========================================================= -->
+  <main id="screen-2" class="hidden relative z-10 flex-1 flex flex-col items-center justify-center min-h-screen px-4 py-12 overflow-hidden">
+    
+    <!-- Top-Left Torn Lilac Corner -->
+    <svg class="fixed top-0 left-0 w-36 sm:w-52 h-36 sm:h-52 text-[#D5BCF0] pointer-events-none z-0 drop-shadow-md" viewBox="0 0 200 200">
+      <path d="M0,0 L185,0 C165,22 155,35 135,52 C118,68 105,88 85,105 C62,122 45,148 22,168 L0,188 Z" fill="currentColor"/>
+    </svg>
+
+    <!-- Bottom-Right Torn Lilac Corner with Daisy -->
+    <div class="fixed bottom-0 right-0 w-40 sm:w-56 h-40 sm:h-56 pointer-events-none z-0">
+      <svg class="w-full h-full text-[#D5BCF0] drop-shadow-md" viewBox="0 0 200 200">
+        <path d="M200,200 L15,200 C35,178 48,162 68,145 C88,128 102,108 122,90 C142,72 162,48 182,25 L200,10 Z" fill="currentColor"/>
+      </svg>
+      <!-- Daisy Flower on Bottom Right Corner -->
+      <svg class="absolute bottom-3 right-3 w-14 h-14 transform -rotate-12" viewBox="0 0 70 64" fill="none">
+        <ellipse cx="35" cy="14" rx="7" ry="12" fill="#FFFFFF"/>
+        <ellipse cx="35" cy="48" rx="7" ry="12" fill="#FFFFFF"/>
+        <ellipse cx="18" cy="31" rx="12" ry="7" fill="#FFFFFF"/>
+        <ellipse cx="52" cy="31" rx="12" ry="7" fill="#FFFFFF"/>
+        <ellipse cx="23" cy="19" rx="7" ry="11" transform="rotate(-45 23 19)" fill="#FFFFFF"/>
+        <ellipse cx="47" cy="43" rx="7" ry="11" transform="rotate(-45 47 43)" fill="#FFFFFF"/>
+        <ellipse cx="47" cy="19" rx="7" ry="11" transform="rotate(45 47 19)" fill="#FFFFFF"/>
+        <ellipse cx="23" cy="43" rx="7" ry="11" transform="rotate(45 23 43)" fill="#FFFFFF"/>
+        <circle cx="35" cy="31" r="8" fill="#FBC02D"/>
+      </svg>
+    </div>
+
+    <!-- Teaser Content -->
+    <div class="relative z-10 flex flex-col items-center text-center max-w-lg mx-auto">
+      <p class="font-bubbly font-semibold text-[#6B3FA0] text-base sm:text-xl tracking-wide mb-1">
+        psst... i made something for you ♡
+      </p>
+      <h2 class="bubbly-title text-4xl sm:text-5xl md:text-6xl mb-4">
+        wanna see it?
+      </h2>
+
+      <!-- Adorable Cute Kitten with Pink Bow Holding Pink Tulips Bouquet (Custom SVG Art) -->
+      <div class="relative my-2 animate-float">
+        <svg class="w-60 h-60 sm:w-72 sm:h-72 drop-shadow-xl" viewBox="0 0 300 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Soft Shadow -->
+          <ellipse cx="155" cy="268" rx="85" ry="14" fill="#6B3FA0" fill-opacity="0.14"/>
+
+          <!-- Kitten Body -->
+          <path d="M105 180 C95 215 95 255 120 262 L195 262 C218 255 218 215 205 180 Z" fill="#F7F3EE" stroke="#D8CFC6" stroke-width="3"/>
+          <!-- Chest Fur -->
+          <path d="M135 185 Q155 215 175 185" fill="#FFFFFF"/>
+
+          <!-- Kitten Ears -->
+          <path d="M98 112 L88 52 L138 82 Z" fill="#B5A99F" stroke="#8E8177" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M103 104 L96 66 L128 84 Z" fill="#F8BBD0"/>
+          <path d="M212 112 L222 52 L172 82 Z" fill="#B5A99F" stroke="#8E8177" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M207 104 L214 66 L182 84 Z" fill="#F8BBD0"/>
+
+          <!-- Kitten Head -->
+          <ellipse cx="155" cy="132" rx="68" ry="56" fill="#FAF7F4" stroke="#D8CFC6" stroke-width="3"/>
+          <!-- Tabby Patches on Forehead & Sides -->
+          <path d="M96 105 C110 85 135 82 145 108 C128 115 108 118 96 105 Z" fill="#A6998E"/>
+          <path d="M214 105 C200 85 175 82 165 108 C182 115 202 118 214 105 Z" fill="#A6998E"/>
+          <!-- Forehead Stripes -->
+          <path d="M155 82 L155 98 M146 85 L148 97 M164 85 L162 97" stroke="#7A6E65" stroke-width="3" stroke-linecap="round"/>
+
+          <!-- Cute Pink Ribbon Bow on Right Ear -->
+          <g transform="translate(182, 58) rotate(18)">
+            <path d="M24 18 C8 2 -6 8 -2 24 C2 36 16 28 24 18 Z" fill="#F48FB1" stroke="#D81B60" stroke-width="2"/>
+            <path d="M28 18 C44 2 58 8 54 24 C50 36 36 28 28 18 Z" fill="#F48FB1" stroke="#D81B60" stroke-width="2"/>
+            <path d="M22 22 L12 42 L22 38 Z" fill="#F06292"/>
+            <path d="M30 22 L40 42 L30 38 Z" fill="#F06292"/>
+            <rect x="20" y="12" width="12" height="12" rx="5" fill="#EC407A" stroke="#D81B60" stroke-width="2"/>
+          </g>
+
+          <!-- Big Adorable Eyes -->
+          <ellipse cx="128" cy="134" rx="13" ry="14" fill="#3E2723"/>
+          <circle cx="124" cy="129" r="4.5" fill="#FFFFFF"/>
+          <circle cx="133" cy="138" r="2" fill="#FFFFFF"/>
+
+          <ellipse cx="182" cy="134" rx="13" ry="14" fill="#3E2723"/>
+          <circle cx="178" cy="129" r="4.5" fill="#FFFFFF"/>
+          <circle cx="187" cy="138" r="2" fill="#FFFFFF"/>
+
+          <!-- Rosy Cheeks -->
+          <ellipse cx="108" cy="148" rx="11" ry="6" fill="#F8BBD0" fill-opacity="0.75"/>
+          <ellipse cx="202" cy="148" rx="11" ry="6" fill="#F8BBD0" fill-opacity="0.75"/>
+
+          <!-- Cute Pink Nose & Little Tongue -->
+          <path d="M150 146 L160 146 L155 152 Z" fill="#F06292"/>
+          <path d="M144 154 Q150 160 155 154 Q160 160 166 154" stroke="#6D4C41" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <!-- Playful Little Tongue -->
+          <path d="M153 156 C153 166 164 166 163 156 Z" fill="#FF80AB" stroke="#D81B60" stroke-width="1.5"/>
+
+          <!-- Whiskers -->
+          <path d="M92 138 L68 134 M92 146 L68 148" stroke="#9E9E9E" stroke-width="2" stroke-linecap="round"/>
+          <path d="M218 138 L242 134 M218 146 L242 148" stroke="#9E9E9E" stroke-width="2" stroke-linecap="round"/>
+
+          <!-- Bouquet of Pink Tulips Held on Left -->
+          <g transform="translate(38, 128) rotate(-14)">
+            <!-- Bouquet Kraft Paper Cone -->
+            <path d="M22 65 L88 65 L62 138 L44 138 Z" fill="#E6C79C" stroke="#C59B6D" stroke-width="2.5" stroke-linejoin="round"/>
+            <path d="M22 65 Q55 78 88 65" fill="#F3DEC0" stroke="#C59B6D" stroke-width="2"/>
+            <!-- Stems & Leaves -->
+            <path d="M42 65 L35 35 M55 65 L55 28 M68 65 L75 36" stroke="#66BB6A" stroke-width="4" stroke-linecap="round"/>
+            <path d="M36 58 C20 48 18 35 32 42" fill="#81C784"/>
+            <path d="M74 58 C90 48 92 35 78 42" fill="#81C784"/>
+            <!-- Tulip 1 -->
+            <path d="M22 34 C22 16 46 16 46 34 C46 44 22 44 22 34 Z" fill="#F06292"/>
+            <path d="M26 24 L34 32 L42 24" fill="#F8BBD0"/>
+            <!-- Tulip 2 (Center) -->
+            <path d="M42 24 C42 4 68 4 68 24 C68 36 42 36 42 24 Z" fill="#EC407A"/>
+            <path d="M47 13 L55 22 L63 13" fill="#F8BBD0"/>
+            <!-- Tulip 3 -->
+            <path d="M62 34 C62 16 86 16 86 34 C86 44 62 44 62 34 Z" fill="#F48FB1"/>
+            <path d="M66 24 L74 32 L82 24" fill="#FCE4EC"/>
+            <!-- Ribbon around Bouquet -->
+            <path d="M40 96 Q55 104 70 96" stroke="#F06292" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="55" cy="100" r="5" fill="#EC407A"/>
+          </g>
+
+          <!-- Cute Paws Holding Bouquet -->
+          <ellipse cx="115" cy="205" rx="18" ry="14" fill="#FFFFFF" stroke="#D8CFC6" stroke-width="2.5"/>
+          <ellipse cx="182" cy="208" rx="18" ry="14" fill="#FFFFFF" stroke="#D8CFC6" stroke-width="2.5"/>
+        </svg>
+      </div>
+
+      <!-- Dynamic Teaser Reaction Message -->
+      <p id="teaser-reaction-text" class="h-6 text-sm font-bubbly font-medium text-[#7E52B3] mb-3 transition-all">
+        
+      </p>
+
+      <!-- Yes / No Pill Buttons -->
+      <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10 mt-1 relative">
+        <button
+          id="btn-yes"
+          onclick="goToScreen(3)"
+          class="bg-[#966FD6] hover:bg-[#8258C7] text-white font-bubbly font-semibold text-2xl sm:text-3xl px-10 py-3 rounded-full border-4 border-white shadow-lg transition-all duration-200 transform hover:scale-105 active:scale-95 flex items-center gap-2"
+          style="box-shadow: 0 6px 0 #754DB8, 0 12px 20px rgba(107, 63, 160, 0.25);"
+        >
+          <span>Yes</span>
+          <span class="text-xl">♡</span>
+        </button>
+
+        <button
+          id="btn-no"
+          onclick="handleNoClick()"
+          class="bg-white hover:bg-purple-50 text-[#6B3FA0] font-bubbly font-semibold text-2xl sm:text-3xl px-10 py-3 rounded-full border-4 border-[#D5BCF0] shadow-md transition-all duration-200 flex items-center gap-2"
+        >
+          <span>No</span>
+          <span class="text-xl">♡</span>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- ========================================================= -->
+  <!-- SCREEN 3: INTERACTIVE GIFT HUB (Matches Image 2)          -->
+  <!-- ========================================================= -->
+  <main id="screen-3" class="hidden relative z-10 flex-1 flex flex-col items-center justify-center min-h-screen px-4 py-14 overflow-hidden">
+    
+    <!-- Top-Left & Bottom-Right Torn Lilac Corners -->
+    <svg class="fixed top-0 left-0 w-32 sm:w-48 h-32 sm:h-48 text-[#D5BCF0] pointer-events-none z-0 drop-shadow-md" viewBox="0 0 200 200">
+      <path d="M0,0 L185,0 C165,22 155,35 135,52 C118,68 105,88 85,105 C62,122 45,148 22,168 L0,188 Z" fill="currentColor"/>
+    </svg>
+    <div class="fixed bottom-0 right-0 w-36 sm:w-52 h-36 sm:h-52 pointer-events-none z-0">
+      <svg class="w-full h-full text-[#D5BCF0] drop-shadow-md" viewBox="0 0 200 200">
+        <path d="M200,200 L15,200 C35,178 48,162 68,145 C88,128 102,108 122,90 C142,72 162,48 182,25 L200,10 Z" fill="currentColor"/>
+      </svg>
+      <svg class="absolute bottom-3 right-3 w-12 h-12 transform -rotate-12" viewBox="0 0 70 64" fill="none">
+        <ellipse cx="35" cy="14" rx="7" ry="12" fill="#FFFFFF"/>
+        <ellipse cx="35" cy="48" rx="7" ry="12" fill="#FFFFFF"/>
+        <ellipse cx="18" cy="31" rx="12" ry="7" fill="#FFFFFF"/>
+        <ellipse cx="52" cy="31" rx="12" ry="7" fill="#FFFFFF"/>
+        <circle cx="35" cy="31" r="8" fill="#FBC02D"/>
+      </svg>
+    </div>
+
+    <!-- Cloud Pill Top Banner -->
+    <div class="relative z-10 mb-8 sm:mb-12 text-center">
+      <div class="cloud-banner px-7 sm:px-10 py-3 inline-block">
+        <h2 class="font-bubbly font-bold text-xl sm:text-3xl text-[#6B3FA0] tracking-wide">
+          click on each item to open
+        </h2>
+      </div>
+    </div>
+
+    <!-- Three Scrapbook Gift Items Grid -->
+    <div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 max-w-5xl w-full items-center justify-items-center px-2">
+      
+      <!-- ITEM 1: VINTAGE INSTANT CAMERA (Opens Photo Memories) -->
+      <button
+        type="button"
+        onclick="openModal('modal-memories')"
+        class="gift-item-btn flex flex-col items-center group focus:outline-none"
+        aria-label="Open Our Photo Memories"
+      >
+        <div class="relative w-56 h-56 sm:w-64 sm:h-64 flex items-center justify-center">
+          <svg viewBox="0 0 260 250" class="w-full h-full drop-shadow-lg" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Leather Wrist Strap + Star Charm -->
+            <path d="M56 125 C22 135 16 185 36 196 C52 204 58 175 56 145" stroke="#8D5B3C" stroke-width="7" stroke-linecap="round"/>
+            <!-- Gold Star Charm -->
+            <path d="M55 154 L59 162 L68 163 L61 169 L63 178 L55 173 L47 178 L49 169 L42 163 L51 162 Z" fill="#FFE082" stroke="#D4A338" stroke-width="1.5"/>
+
+            <!-- Camera Top Shutter Button -->
+            <rect x="74" y="54" width="24" height="10" rx="4" fill="#6D4C41"/>
+            <!-- Camera Body (Cream & Warm Brown Retro) -->
+            <rect x="54" y="62" width="166" height="132" rx="26" fill="#F5E6D3" stroke="#8D6E63" stroke-width="3"/>
+            <!-- Brown Lower Wrap -->
+            <path d="M54 118 L220 118 L220 168 C220 182 208 194 194 194 L80 194 C66 194 54 182 54 168 Z" fill="#9C6B4E"/>
+            <!-- Viewfinder & Flash -->
+            <rect x="72" y="75" width="24" height="18" rx="5" fill="#4E342E"/>
+            <circle cx="80" cy="82" r="3" fill="#FFF8E1"/>
+            <rect x="176" y="75" width="28" height="16" rx="5" fill="#FFF8E1" stroke="#BCAAA4" stroke-width="2"/>
+
+            <!-- Cute Little Heart Detail on Camera -->
+            <path d="M192 145 C192 140 199 140 199 145 C199 140 206 140 206 145 C206 151 199 156 199 156 C199 156 192 151 192 145 Z" fill="#F5E6D3"/>
+
+            <!-- Camera Lens Rings -->
+            <circle cx="137" cy="128" r="46" fill="#EFEBE9" stroke="#6D4C41" stroke-width="3"/>
+            <circle cx="137" cy="128" r="37" fill="#3E2723"/>
+            <circle cx="137" cy="128" r="27" fill="#1F1412" stroke="#8D6E63" stroke-width="2"/>
+            <!-- Lens Reflection -->
+            <circle cx="127" cy="118" r="7" fill="#FFFFFF" fill-opacity="0.35"/>
+            <circle cx="146" cy="136" r="3.5" fill="#FFFFFF" fill-opacity="0.25"/>
+
+            <!-- Sparkle Lines Top Right -->
+            <path d="M214 54 L224 44 M222 64 L235 60 M205 48 L208 36" stroke="#6D4C41" stroke-width="3" stroke-linecap="round"/>
+
+            <!-- Polaroid Slot & Emerging Photo -->
+            <rect x="86" y="182" width="102" height="8" rx="4" fill="#3E2723"/>
+            <g transform="rotate(-4 137 210)">
+              <rect x="92" y="185" width="90" height="54" rx="4" fill="#FFFFFF" stroke="#D7CCC8" stroke-width="2"/>
+              <rect x="99" y="191" width="76" height="36" fill="url(#polaroidSunset)"/>
+            </g>
+            <defs>
+              <linearGradient id="polaroidSunset" x1="99" y1="191" x2="175" y2="227" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#F8BBD0"/>
+                <stop offset="0.5" stop-color="#FFE0B2"/>
+                <stop offset="1" stop-color="#B39DDB"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <span class="mt-1 bg-white/90 border-2 border-[#B996E3] text-[#6B3FA0] font-bubbly font-semibold px-4 py-1 rounded-full text-sm shadow-sm group-hover:bg-[#6B3FA0] group-hover:text-white transition">
+          📸 Our Memories
+        </span>
+      </button>
+
+      <!-- ITEM 2: PASTEL LILAC LOVE LETTER ENVELOPE (Opens Love Letter) -->
+      <button
+        type="button"
+        onclick="openModal('modal-letter')"
+        class="gift-item-btn flex flex-col items-center group focus:outline-none"
+        aria-label="Open Love Letter"
+      >
+        <div class="relative w-56 h-56 sm:w-64 sm:h-64 flex items-center justify-center">
+          <svg viewBox="0 0 260 250" class="w-full h-full drop-shadow-lg" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Envelope Back Flap (Open) -->
+            <path d="M44 108 L130 42 L216 108 L216 196 L44 196 Z" fill="#B695E0" stroke="#9B72CF" stroke-width="2.5" stroke-linejoin="round"/>
+            
+            <!-- Cream Stationery Letter Peeking Out -->
+            <g transform="rotate(-3 130 120)">
+              <rect x="64" y="72" width="132" height="106" rx="6" fill="#FFFDF7" stroke="#E6D7F7" stroke-width="2"/>
+              <!-- Handwritten Heart on Letter -->
+              <path d="M130 96 C130 89 140 89 140 96 C140 104 130 111 130 111 C130 111 120 104 120 96 C120 89 130 89 130 96 Z" stroke="#9C7A54" stroke-width="2.5" fill="none"/>
+              <line x1="86" y1="124" x2="174" y2="124" stroke="#E0D2F2" stroke-width="2" stroke-linecap="round"/>
+              <line x1="94" y1="136" x2="166" y2="136" stroke="#E0D2F2" stroke-width="2" stroke-linecap="round"/>
+            </g>
+
+            <!-- Envelope Front Pocket Left & Right Flaps -->
+            <path d="M44 108 L130 162 L44 198 Z" fill="#D5BCF0" stroke="#B695E0" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M216 108 L130 162 L216 198 Z" fill="#CEB1ED" stroke="#B695E0" stroke-width="2" stroke-linejoin="round"/>
+            <!-- Bottom Flap -->
+            <path d="M44 198 L130 144 L216 198 Z" fill="#DFC9F5" stroke="#B695E0" stroke-width="2" stroke-linejoin="round"/>
+
+            <!-- Pink Heart Seal -->
+            <path d="M130 148 C130 138 146 138 146 148 C146 160 130 171 130 171 C130 171 114 160 114 148 C114 138 130 138 130 148 Z" fill="#F48FB1" stroke="#EC407A" stroke-width="2"/>
+          </svg>
+        </div>
+        <span class="mt-1 bg-white/90 border-2 border-[#B996E3] text-[#6B3FA0] font-bubbly font-semibold px-4 py-1 rounded-full text-sm shadow-sm group-hover:bg-[#6B3FA0] group-hover:text-white transition">
+          💌 Love Letter
+        </span>
+      </button>
+
+      <!-- ITEM 3: FLORAL RETRO CASSETTE TAPE (Opens Our Soundtrack) -->
+      <button
+        type="button"
+        onclick="openModal('modal-music')"
+        class="gift-item-btn flex flex-col items-center group focus:outline-none"
+        aria-label="Open Our Soundtrack"
+      >
+        <div class="relative w-56 h-56 sm:w-64 sm:h-64 flex items-center justify-center">
+          <svg viewBox="0 0 270 240" class="w-full h-full drop-shadow-lg" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g transform="rotate(-3 135 125)">
+              <!-- Translucent Clear Cassette Shell -->
+              <rect x="24" y="56" width="222" height="138" rx="14" fill="#EFEBE9" fill-opacity="0.92" stroke="#A1887F" stroke-width="3"/>
+              <!-- Corner Screws -->
+              <circle cx="36" cy="68" r="4" fill="#BCAAA4"/>
+              <circle cx="234" cy="68" r="4" fill="#BCAAA4"/>
+              <circle cx="36" cy="182" r="4" fill="#BCAAA4"/>
+              <circle cx="234" cy="182" r="4" fill="#BCAAA4"/>
+
+              <!-- Cream & Pastel Floral Label Sticker -->
+              <rect x="40" y="70" width="190" height="84" rx="8" fill="#FAF0E6" stroke="#D7CCC8" stroke-width="2"/>
+              <!-- Floral Doodles on Label -->
+              <circle cx="62" cy="88" r="8" fill="#F8BBD0"/>
+              <circle cx="62" cy="88" r="3" fill="#FFF59D"/>
+              <circle cx="76" cy="96" r="6" fill="#F48FB1"/>
+              <path d="M52 96 Q62 108 75 104" stroke="#81C784" stroke-width="2.5" fill="none"/>
+              <circle cx="206" cy="88" r="7" fill="#E1BEE7"/>
+              <circle cx="206" cy="88" r="2.5" fill="#FFF59D"/>
+
+              <!-- Center Tape Window -->
+              <rect x="74" y="96" width="122" height="40" rx="18" fill="#4E342E" stroke="#8D6E63" stroke-width="2.5"/>
+              <!-- Left & Right Tape Reels -->
+              <circle cx="102" cy="116" r="14" fill="#FFFDF7" stroke="#BCAAA4" stroke-width="2"/>
+              <circle cx="102" cy="116" r="5" fill="#4E342E"/>
+              <circle cx="168" cy="116" r="14" fill="#FFFDF7" stroke="#BCAAA4" stroke-width="2"/>
+              <circle cx="168" cy="116" r="5" fill="#4E342E"/>
+              <!-- Magnetic Ribbon -->
+              <rect x="115" y="106" width="40" height="20" fill="#3E2723"/>
+
+              <!-- Bottom Trapezoid Tape Head Housing -->
+              <path d="M68 194 L78 164 L192 164 L202 194 Z" fill="#D7CCC8" stroke="#A1887F" stroke-width="2.5" stroke-linejoin="round"/>
+              <circle cx="92" cy="182" r="4.5" fill="#6D4C41"/>
+              <circle cx="178" cy="182" r="4.5" fill="#6D4C41"/>
+              <rect x="122" y="176" width="26" height="8" rx="3" fill="#6D4C41"/>
+            </g>
+          </svg>
+        </div>
+        <span class="mt-1 bg-white/90 border-2 border-[#B996E3] text-[#6B3FA0] font-bubbly font-semibold px-4 py-1 rounded-full text-sm shadow-sm group-hover:bg-[#6B3FA0] group-hover:text-white transition">
+          🎶 Our Soundtrack
+        </span>
+      </button>
+
+    </div>
+  </main>
+
+  <!-- ========================================================= -->
+  <!-- MODAL 1: OUR MEMORIES (Polaroid Gallery)                  -->
+  <!-- ========================================================= -->
+  <div id="modal-memories" class="hidden fixed inset-0 z-50 bg-[#4A2C6D]/50 backdrop-blur-xs flex items-center justify-center p-4">
+    <div class="bg-[#FFFDF7] border-4 border-[#B996E3] rounded-3xl max-w-3xl w-full max-h-[90vh] flex flex-col shadow-2xl overflow-hidden screen-enter">
+      <!-- Modal Header -->
+      <div class="lilac-paper-bg px-6 py-4 flex items-center justify-between border-b-2 border-[#C7A6EB]">
+        <h3 class="font-bubbly font-bold text-2xl text-[#5A328A] flex items-center gap-2">
+          <span>📸</span> Our Favorite Memories
+        </h3>
+        <button
+          onclick="closeModal('modal-memories')"
+          class="bg-white hover:bg-purple-100 text-[#6B3FA0] font-bubbly font-semibold px-4 py-1.5 rounded-full border-2 border-[#9B72CF] text-sm shadow-xs transition"
+        >
+          ← Back
+        </button>
+      </div>
+
+      <!-- Polaroid Grid Body -->
+      <div id="memories-grid" class="p-6 overflow-y-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 scrapbook-stripes">
+        <!-- Populated dynamically via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================= -->
+  <!-- MODAL 2: LOVE LETTER (Vintage Lined Stationery)           -->
+  <!-- ========================================================= -->
+  <div id="modal-letter" class="hidden fixed inset-0 z-50 bg-[#4A2C6D]/50 backdrop-blur-xs flex items-center justify-center p-4">
+    <div class="bg-[#FFFDF7] border-4 border-[#B996E3] rounded-3xl max-w-2xl w-full max-h-[90vh] flex flex-col shadow-2xl overflow-hidden screen-enter">
+      <!-- Modal Header -->
+      <div class="lilac-paper-bg px-6 py-4 flex items-center justify-between border-b-2 border-[#C7A6EB]">
+        <h3 class="font-bubbly font-bold text-2xl text-[#5A328A] flex items-center gap-2">
+          <span>💌</span> For You, Always
+        </h3>
+        <button
+          onclick="closeModal('modal-letter')"
+          class="bg-white hover:bg-purple-100 text-[#6B3FA0] font-bubbly font-semibold px-4 py-1.5 rounded-full border-2 border-[#9B72CF] text-sm shadow-xs transition"
+        >
+          ← Back
+        </button>
+      </div>
+
+      <!-- Lined Stationery Content -->
+      <div class="p-6 sm:p-8 overflow-y-auto relative">
+        <div class="washi-tape w-28 h-5 mx-auto -mt-3 mb-4 transform -rotate-1"></div>
+        <div class="lined-paper p-6 rounded-2xl border-2 border-[#E6D7F7] shadow-inner relative">
+          <p id="letter-greeting" class="font-script text-3xl font-bold text-[#6B3FA0] mb-2">
+            My Dearest Love,
+          </p>
+          <p id="letter-body" class="font-script text-2xl text-[#4A2C6D] whitespace-pre-line">
+            Happy Anniversary! Every single day with you feels like my favorite page in a storybook. Thank you for all the laughter, late-night talks, warm hugs, and little adventures we share.
+
+            Here is to many more years of loving you endlessly. ♡
+          </p>
+          <div class="mt-6 flex items-end justify-between">
+            <div>
+              <p class="font-script text-2xl text-[#7E52B3]">Forever yours,</p>
+              <p id="letter-signature" class="font-script text-3xl font-bold text-[#6B3FA0]">Your Favorite Person ♡</p>
+            </div>
+            <!-- Pink Heart Wax Seal -->
+            <div class="w-14 h-14 rounded-full bg-[#F48FB1] border-4 border-[#F8BBD0] shadow-md flex items-center justify-center text-white text-2xl transform rotate-12">
+              ♡
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================= -->
+  <!-- MODAL 3: OUR SOUNDTRACK (Interactive Cassette Player)     -->
+  <!-- ========================================================= -->
+  <div id="modal-music" class="hidden fixed inset-0 z-50 bg-[#4A2C6D]/50 backdrop-blur-xs flex items-center justify-center p-4">
+    <div class="bg-[#FFFDF7] border-4 border-[#B996E3] rounded-3xl max-w-lg w-full flex flex-col shadow-2xl overflow-hidden screen-enter">
+      <!-- Modal Header -->
+      <div class="lilac-paper-bg px-6 py-4 flex items-center justify-between border-b-2 border-[#C7A6EB]">
+        <h3 class="font-bubbly font-bold text-2xl text-[#5A328A] flex items-center gap-2">
+          <span>🎶</span> Our Anniversary Mix
+        </h3>
+        <button
+          onclick="closeModal('modal-music'); stopMusic();"
+          class="bg-white hover:bg-purple-100 text-[#6B3FA0] font-bubbly font-semibold px-4 py-1.5 rounded-full border-2 border-[#9B72CF] text-sm shadow-xs transition"
+        >
+          ← Back
+        </button>
+      </div>
+
+      <!-- Cassette Player Body -->
+      <div class="p-6 sm:p-8 flex flex-col items-center text-center scrapbook-stripes">
+        <!-- Animated Cassette Graphic -->
+        <div class="w-72 sm:w-80 mb-4">
+          <svg viewBox="0 0 270 175" class="w-full h-auto drop-shadow-md" fill="none">
+            <rect x="15" y="12" width="240" height="150" rx="16" fill="#EFEBE9" stroke="#A1887F" stroke-width="3"/>
+            <rect x="32" y="26" width="206" height="94" rx="10" fill="#FAF0E6" stroke="#D7CCC8" stroke-width="2"/>
+            <!-- Song Title on Tape -->
+            <text id="tape-label-svg" x="135" y="45" text-anchor="middle" fill="#6B3FA0" font-family="Caveat, cursive" font-size="18" font-weight="bold">
+              Our Love Song ♡
+            </text>
+            <!-- Tape Window -->
+            <rect x="68" y="55" width="134" height="44" rx="20" fill="#4E342E" stroke="#8D6E63" stroke-width="2.5"/>
+            <!-- Left Spinning Reel -->
+            <g id="reel-left">
+              <circle cx="98" cy="77" r="15" fill="#FFFDF7"/>
+              <circle cx="98" cy="77" r="5" fill="#4E342E"/>
+              <line x1="98" y1="64" x2="98" y2="70" stroke="#4E342E" stroke-width="2.5"/>
+              <line x1="98" y1="84" x2="98" y2="90" stroke="#4E342E" stroke-width="2.5"/>
+              <line x1="85" y1="77" x2="91" y2="77" stroke="#4E342E" stroke-width="2.5"/>
+              <line x1="105" y1="77" x2="111" y2="77" stroke="#4E342E" stroke-width="2.5"/>
+            </g>
+            <!-- Right Spinning Reel -->
+            <g id="reel-right">
+              <circle cx="172" cy="77" r="15" fill="#FFFDF7"/>
+              <circle cx="172" cy="77" r="5" fill="#4E342E"/>
+              <line x1="172" y1="64" x2="172" y2="70" stroke="#4E342E" stroke-width="2.5"/>
+              <line x1="172" y1="84" x2="172" y2="90" stroke="#4E342E" stroke-width="2.5"/>
+              <line x1="159" y1="77" x2="165" y2="77" stroke="#4E342E" stroke-width="2.5"/>
+              <line x1="179" y1="77" x2="185" y2="77" stroke="#4E342E" stroke-width="2.5"/>
+            </g>
+            <rect x="113" y="67" width="44" height="20" fill="#3E2723"/>
+            <path d="M62 162 L74 132 L196 132 L208 162 Z" fill="#D7CCC8" stroke="#A1887F" stroke-width="2.5"/>
+          </svg>
+        </div>
+
+        <h4 id="song-title-display" class="font-bubbly font-bold text-xl text-[#6B3FA0]">
+          "Always & Forever" — Music Box Edition
+        </h4>
+        <p id="song-note-display" class="font-script text-2xl text-[#7E52B3] mt-1 mb-5">
+          Press play to listen to our little melody ♡
+        </p>
+
+        <!-- Hidden Audio Element if User Uploads Custom MP3/Voice Note -->
+        <audio id="custom-audio-player" class="hidden"></audio>
+
+        <!-- Play / Pause Controls -->
+        <div class="flex items-center gap-4">
+          <button
+            id="play-pause-btn"
+            onclick="toggleMusic()"
+            class="bg-[#966FD6] hover:bg-[#8258C7] text-white font-bubbly font-semibold px-7 py-3 rounded-full shadow-md border-2 border-white flex items-center gap-2 text-lg transition transform hover:scale-105"
+          >
+            <span id="play-icon">▶</span>
+            <span id="play-text">Play Melody</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================= -->
+  <!-- MODAL 4: CUSTOMIZE GIFT STUDIO                            -->
+  <!-- ========================================================= -->
+  <div id="modal-customizer" class="hidden fixed inset-0 z-50 bg-[#4A2C6D]/60 backdrop-blur-xs flex items-center justify-center p-4">
+    <div class="bg-[#FFFDF7] border-4 border-[#B996E3] rounded-3xl max-w-2xl w-full max-h-[90vh] flex flex-col shadow-2xl overflow-hidden screen-enter">
+      <div class="lilac-paper-bg px-6 py-4 flex items-center justify-between border-b-2 border-[#C7A6EB]">
+        <h3 class="font-bubbly font-bold text-xl sm:text-2xl text-[#5A328A]">
+          ✨ Personalize Your Anniversary Gift
+        </h3>
+        <button
+          onclick="closeModal('modal-customizer')"
+          class="bg-white hover:bg-purple-100 text-[#6B3FA0] font-bubbly font-semibold px-3.5 py-1 rounded-full border-2 border-[#9B72CF] text-sm"
+        >
+          ✕ Close
+        </button>
+      </div>
+
+      <div class="p-6 overflow-y-auto space-y-5 text-sm">
+        <!-- Passcode & Frame Settings -->
+        <div class="bg-white p-4 rounded-2xl border-2 border-[#E6D7F7] space-y-3">
+          <h4 class="font-bubbly font-bold text-base text-[#6B3FA0]">1. Passcode & Cover Photo</h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="block font-semibold mb-1">4-Digit Passcode</label>
+              <input id="edit-passcode" type="text" maxlength="4" pattern="\d{4}" class="w-full px-3 py-2 rounded-xl border-2 border-[#D5BCF0] focus:outline-none focus:border-[#7E52B3]" placeholder="e.g. 1119" />
+            </div>
+            <div>
+              <label class="block font-semibold mb-1">Passcode Hint</label>
+              <input id="edit-hint" type="text" class="w-full px-3 py-2 rounded-xl border-2 border-[#D5BCF0] focus:outline-none focus:border-[#7E52B3]" placeholder="e.g. Our anniversary date" />
+            </div>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="block font-semibold mb-1">Frame Badge Text</label>
+              <input id="edit-badge" type="text" class="w-full px-3 py-2 rounded-xl border-2 border-[#D5BCF0] focus:outline-none focus:border-[#7E52B3]" />
+            </div>
+            <div>
+              <label class="block font-semibold mb-1">Upload Couple Photo</label>
+              <input id="edit-main-photo" type="file" accept="image/*" onchange="handleMainPhotoUpload(event)" class="w-full text-xs file:mr-2 file:py-1.5 file:px-3 file:rounded-full file:border-0 file:bg-purple-100 file:text-[#6B3FA0] file:font-semibold" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Love Letter Settings -->
+        <div class="bg-white p-4 rounded-2xl border-2 border-[#E6D7F7] space-y-3">
+          <h4 class="font-bubbly font-bold text-base text-[#6B3FA0]">2. Love Letter</h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="block font-semibold mb-1">Greeting</label>
+              <input id="edit-letter-greeting" type="text" class="w-full px-3 py-2 rounded-xl border-2 border-[#D5BCF0]" />
+            </div>
+            <div>
+              <label class="block font-semibold mb-1">Signature</label>
+              <input id="edit-letter-signature" type="text" class="w-full px-3 py-2 rounded-xl border-2 border-[#D5BCF0]" />
+            </div>
+          </div>
+          <div>
+            <label class="block font-semibold mb-1">Letter Message</label>
+            <textarea id="edit-letter-body" rows="4" class="w-full px-3 py-2 rounded-xl border-2 border-[#D5BCF0]"></textarea>
+          </div>
+        </div>
+
+        <!-- Polaroid Memories Settings -->
+        <div class="bg-white p-4 rounded-2xl border-2 border-[#E6D7F7] space-y-3">
+          <div class="flex items-center justify-between">
+            <h4 class="font-bubbly font-bold text-base text-[#6B3FA0]">3. Polaroid Photos</h4>
+            <label class="cursor-pointer bg-purple-100 hover:bg-purple-200 text-[#6B3FA0] font-bubbly font-semibold px-3 py-1 rounded-full text-xs">
+              + Add Photo
+              <input type="file" accept="image/*" onchange="handleAddMemoryPhoto(event)" class="hidden" />
+            </label>
+          </div>
+          <div id="edit-memories-list" class="space-y-2 max-h-40 overflow-y-auto pr-1"></div>
+        </div>
+
+        <!-- Cassette Song Settings -->
+        <div class="bg-white p-4 rounded-2xl border-2 border-[#E6D7F7] space-y-3">
+          <h4 class="font-bubbly font-bold text-base text-[#6B3FA0]">4. Cassette Tape Song / Voice Memo</h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="block font-semibold mb-1">Track Title</label>
+              <input id="edit-song-title" type="text" class="w-full px-3 py-2 rounded-xl border-2 border-[#D5BCF0]" />
+            </div>
+            <div>
+              <label class="block font-semibold mb-1">Sweet Dedication</label>
+              <input id="edit-song-note" type="text" class="w-full px-3 py-2 rounded-xl border-2 border-[#D5BCF0]" />
+            </div>
+          </div>
+          <div>
+            <label class="block font-semibold mb-1">Optional Custom Audio (MP3 / Voice Memo)</label>
+            <input type="file" accept="audio/*" onchange="handleAudioUpload(event)" class="w-full text-xs file:mr-2 file:py-1.5 file:px-3 file:rounded-full file:border-0 file:bg-purple-100 file:text-[#6B3FA0] file:font-semibold" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Buttons -->
+      <div class="px-6 py-3 bg-purple-50 border-t-2 border-[#E6D7F7] flex items-center justify-between">
+        <button onclick="resetToDefaults()" class="text-xs text-purple-600 underline hover:text-purple-800">
+          Reset Defaults
+        </button>
+        <button onclick="saveCustomization()" class="bg-[#966FD6] hover:bg-[#8258C7] text-white font-bubbly font-semibold px-6 py-2 rounded-full shadow-md">
+          Save Changes ♡
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Pill -->
+  <div id="toast-msg" class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 hidden bg-[#6B3FA0] text-white font-bubbly px-5 py-2 rounded-full shadow-lg text-sm">
+    Saved! ♡
+  </div>
+
+  <script>
+    // =========================================================
+    // STATE & DEFAULT SCRAPBOOK DATA
+    // =========================================================
+    const DEFAULT_DATA = {
+      passcode: '1119',
+      hint: 'Our special date (1119)',
+      badgeText: 'Happy Anniversary ♡',
+      mainPhoto: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=600&q=80',
+      letterGreeting: 'My Dearest Love,',
+      letterBody: `Happy Anniversary! Every single day with you feels like my favorite page in a storybook. Thank you for all the laughter, late-night talks, warm hugs, and little adventures we share.\n\nNo matter where life takes us, my favorite place will always be right next to you. Here's to forever! ♡`,
+      letterSignature: 'Your Favorite Person ♡',
+      songTitle: '"Always & Forever" — Music Box',
+      songNote: 'Press play to listen to our little melody ♡',
+      memories: [
+        {
+          url: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=500&q=80',
+          caption: 'The day everything started ♡'
+        },
+        {
+          url: 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=500&q=80',
+          caption: 'My favorite coffee dates with you'
+        },
+        {
+          url: 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=500&q=80',
+          caption: 'Every moment with you is magic ✨'
+        }
+      ]
+    };
+
+    let appData = loadAppData();
+    let enteredDigits = '';
+    let noClickCount = 0;
+
+    function loadAppData() {
+      try {
+        const saved = localStorage.getItem('anniversary_scrapbook_v1');
+        if (saved) return { ...DEFAULT_DATA, ...JSON.parse(saved) };
+      } catch (e) {
+        console.warn('Storage unavailable, using defaults');
+      }
+      return JSON.parse(JSON.stringify(DEFAULT_DATA));
+    }
+
+    function persistAppData() {
+      try {
+        localStorage.setItem('anniversary_scrapbook_v1', JSON.stringify(appData));
+      } catch (e) {
+        showToast('Updated for this session! ♡');
+      }
+    }
+
+    // =========================================================
+    // INITIALIZATION & RENDERING
+    // =========================================================
+    window.addEventListener('DOMContentLoaded', () => {
+      renderScatteredStars();
+      applyDataToUI();
+    });
+
+    function renderScatteredStars() {
+      const container = document.getElementById('stars-layer');
+      const colors = ['#FDE047', '#F9A8D4', '#93C5FD', '#C084FC'];
+      const positions = [
+        { top: '6%', left: '4%', size: 18, rot: 12 },
+        { top: '14%', left: '43%', size: 15, rot: -15 },
+        { top: '28%', left: '8%', size: 14, rot: 22 },
+        { top: '46%', left: '3%', size: 16, rot: -8 },
+        { top: '76%', left: '6%', size: 17, rot: 18 },
+        { top: '88%', left: '22%', size: 14, rot: -20 },
+        { top: '10%', right: '6%', size: 16, rot: 15 },
+        { top: '34%', right: '4%', size: 15, rot: -12 },
+        { top: '64%', right: '5%', size: 18, rot: 25 },
+        { top: '84%', right: '32%', size: 14, rot: -10 },
+        { top: '22%', left: '28%', size: 13, rot: 8 },
+        { top: '72%', left: '42%', size: 14, rot: -18 }
+      ];
+
+      container.innerHTML = positions.map((p, idx) => {
+        const color = colors[idx % colors.length];
+        const posStyle = `top:${p.top}; ${p.left ? `left:${p.left};` : `right:${p.right};`} transform: rotate(${p.rot}deg);`;
+        return `
+          <svg style="${posStyle}" width="${p.size}" height="${p.size}" viewBox="0 0 24 24" class="absolute opacity-85">
+            <path d="M12 2L14.9 8.6L22 9.3L16.6 14L18.2 21L12 17.3L5.8 21L7.4 14L2 9.3L9.1 8.6L12 2Z" fill="${color}" stroke="#FFFFFF" stroke-width="1"/>
+          </svg>
+        `;
+      }).join('');
+    }
+
+    function applyDataToUI() {
+      document.getElementById('main-couple-photo').src = appData.mainPhoto;
+      document.getElementById('couple-caption-badge').textContent = appData.badgeText;
+      document.getElementById('passcode-hint-text').textContent = appData.hint;
+
+      // Letter
+      document.getElementById('letter-greeting').textContent = appData.letterGreeting;
+      document.getElementById('letter-body').textContent = appData.letterBody;
+      document.getElementById('letter-signature').textContent = appData.letterSignature;
+
+      // Soundtrack
+      document.getElementById('song-title-display').textContent = appData.songTitle;
+      document.getElementById('song-note-display').textContent = appData.songNote;
+      document.getElementById('tape-label-svg').textContent = appData.songTitle.slice(0, 26);
+
+      // Memories Gallery
+      renderMemoriesGrid();
+    }
+
+    function renderMemoriesGrid() {
+      const grid = document.getElementById('memories-grid');
+      grid.innerHTML = appData.memories.map((item, idx) => {
+        const tilt = idx % 2 === 0 ? '-rotate-1' : 'rotate-1';
+        return `
+          <div class="bg-white p-3 pb-5 rounded-md shadow-md border border-[#E6D7F7] transform ${tilt} hover:rotate-0 hover:scale-105 transition duration-200 flex flex-col">
+            <div class="aspect-square w-full overflow-hidden rounded-xs bg-purple-50 mb-3">
+              <img
+                src="${item.url}"
+                onerror="this.src='https://placehold.co/400x400/F3E8FF/6B3FA0?text=Sweet+Memory+%E2%99%A1'"
+                alt="Memory ${idx + 1}"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <p class="font-script text-xl text-center text-[#5A328A] leading-snug">
+              ${item.caption}
+            </p>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // =========================================================
+    // SCREEN 1: PASSCODE LOGIC
+    // =========================================================
+    function pressDigit(digit) {
+      playClickTone(520);
+      if (enteredDigits.length >= 4) return;
+      enteredDigits += digit;
+      updatePasscodeBoxes();
+
+      if (enteredDigits.length === 4) {
+        setTimeout(checkPasscode, 220);
+      }
+    }
+
+    function deleteDigit() {
+      playClickTone(380);
+      enteredDigits = enteredDigits.slice(0, -1);
+      updatePasscodeBoxes();
+    }
+
+    function updatePasscodeBoxes() {
+      const boxes = document.querySelectorAll('.passcode-box');
+      boxes.forEach((box, idx) => {
+        if (idx < enteredDigits.length) {
+          box.classList.add('filled');
+          box.innerHTML = `<span class="w-2.5 h-2.5 rounded-full bg-[#6B3FA0] inline-block"></span>`;
+        } else {
+          box.classList.remove('filled');
+          box.innerHTML = '';
+        }
+      });
+    }
+
+    function checkPasscode() {
+      const boxContainer = document.getElementById('passcode-boxes');
+      const feedback = document.getElementById('passcode-feedback');
+
+      if (enteredDigits === appData.passcode) {
+        playSuccessChime();
+        feedback.innerHTML = 'Unlocked! ♡';
+        setTimeout(() => {
+          enteredDigits = '';
+          updatePasscodeBoxes();
+          feedback.innerHTML = `Hint: <span id="passcode-hint-text">${appData.hint}</span>`;
+          goToScreen(2);
+        }, 350);
+      } else {
+        playErrorTone();
+        boxContainer.classList.add('animate-shake');
+        feedback.textContent = 'Oops! Try again ♡';
+        setTimeout(() => {
+          boxContainer.classList.remove('animate-shake');
+          enteredDigits = '';
+          updatePasscodeBoxes();
+        }, 500);
+      }
+    }
+
+    // Keyboard Support for Passcode
+    window.addEventListener('keydown', (e) => {
+      if (document.getElementById('screen-1').classList.contains('hidden')) return;
+      if (!document.getElementById('modal-customizer').classList.contains('hidden')) return;
+
+      if (e.key >= '0' && e.key <= '9') {
+        pressDigit(e.key);
+      } else if (e.key === 'Backspace') {
+        deleteDigit();
+      } else if (e.key === 'Enter') {
+        checkPasscode();
+      }
+    });
+
+    // =========================================================
+    // SCREEN NAVIGATION & TEASER INTERACTION
+    // =========================================================
+    function goToScreen(num) {
+      [1, 2, 3].forEach((n) => {
+        const el = document.getElementById(`screen-${n}`);
+        if (n === num) {
+          el.classList.remove('hidden');
+          el.classList.add('screen-enter');
+        } else {
+          el.classList.add('hidden');
+          el.classList.remove('screen-enter');
+        }
+      });
+
+      const lockBtn = document.getElementById('nav-home-btn');
+      if (num === 1) {
+        lockBtn.classList.add('hidden');
+      } else {
+        lockBtn.classList.remove('hidden');
+      }
+    }
+
+    function handleNoClick() {
+      playClickTone(340);
+      noClickCount++;
+      const btnNo = document.getElementById('btn-no');
+      const btnYes = document.getElementById('btn-yes');
+      const reaction = document.getElementById('teaser-reaction-text');
+
+      const prompts = [
+        'Are you sure? Look at the kitty! 🥺',
+        'Wrong button, cutie! Try the purple one ♡',
+        'Nice try, you have to see it! ✨',
+        'Okay now Yes is huge, click Yes! ♡'
+      ];
+      reaction.textContent = prompts[Math.min(noClickCount - 1, prompts.length - 1)];
+
+      // Grow Yes button & dodge/shrink No button
+      const yesScale = Math.min(1 + noClickCount * 0.14, 1.55);
+      const noScale = Math.max(1 - noClickCount * 0.14, 0.55);
+      const randomX = (Math.random() - 0.5) * 70;
+      const randomY = (Math.random() - 0.5) * 35;
+
+      btnYes.style.transform = `scale(${yesScale})`;
+      btnNo.style.transform = `translate(${randomX}px, ${randomY}px) scale(${noScale})`;
+    }
+
+    // =========================================================
+    // MODALS
+    // =========================================================
+    function openModal(id) {
+      playClickTone(600);
+      document.getElementById(id).classList.remove('hidden');
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).classList.add('hidden');
+    }
+
+    // =========================================================
+    // WEB AUDIO MUSIC BOX SYNTHESIZER & AUDIO PLAYER
+    // =========================================================
+    let audioCtx = null;
+    let isPlaying = false;
+    let melodyTimer = null;
+    let noteIndex = 0;
+    let customAudioSrc = null;
+
+    // Gentle romantic music box melody (Canon / Twinkle inspired)
+    const MELODY_NOTES = [
+      523.25, 659.25, 783.99, 659.25, // C5 E5 G5 E5
+      587.33, 698.46, 880.00, 698.46, // D5 F5 A5 F5
+      523.25, 659.25, 783.99, 1046.50, // C5 E5 G5 C6
+      987.77, 783.99, 659.25, 587.33  // B5 G5 E5 D5
+    ];
+
+    function ensureAudioCtx() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+    }
+
+    function playClickTone(freq) {
+      try {
+        ensureAudioCtx();
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        gain.gain.setValueAtTime(0.06, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.09);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.09);
+      } catch (e) {}
+    }
+
+    function playSuccessChime() {
+      [523.25, 659.25, 783.99, 1046.5].forEach((f, i) => {
+        setTimeout(() => playClickTone(f), i * 85);
+      });
+    }
+
+    function playErrorTone() {
+      playClickTone(240);
+      setTimeout(() => playClickTone(200), 110);
+    }
+
+    function playMusicBoxNote(freq) {
+      ensureAudioCtx();
+      const now = audioCtx.currentTime;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(freq, now);
+
+      gain.gain.setValueAtTime(0.001, now);
+      gain.gain.linearRampToValueAtTime(0.14, now + 0.03);
+      gain.gain.exponentialRampToValueAtTime(0.0008, now + 1.1);
+
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start(now);
+      osc.stop(now + 1.15);
+    }
+
+    function toggleMusic() {
+      if (isPlaying) {
+        stopMusic();
+      } else {
+        startMusic();
+      }
+    }
+
+    function startMusic() {
+      isPlaying = true;
+      document.getElementById('play-icon').textContent = '⏸';
+      document.getElementById('play-text').textContent = 'Pause';
+      document.getElementById('reel-left').classList.add('reel-spinning');
+      document.getElementById('reel-right').classList.add('reel-spinning');
+
+      const customPlayer = document.getElementById('custom-audio-player');
+      if (customAudioSrc) {
+        customPlayer.src = customAudioSrc;
+        customPlayer.loop = true;
+        customPlayer.play();
+        return;
+      }
+
+      playMusicBoxNote(MELODY_NOTES[noteIndex % MELODY_NOTES.length]);
+      noteIndex++;
+      melodyTimer = setInterval(() => {
+        playMusicBoxNote(MELODY_NOTES[noteIndex % MELODY_NOTES.length]);
+        noteIndex++;
+      }, 480);
+    }
+
+    function stopMusic() {
+      isPlaying = false;
+      document.getElementById('play-icon').textContent = '▶';
+      document.getElementById('play-text').textContent = 'Play Melody';
+      document.getElementById('reel-left').classList.remove('reel-spinning');
+      document.getElementById('reel-right').classList.remove('reel-spinning');
+
+      if (melodyTimer) {
+        clearInterval(melodyTimer);
+        melodyTimer = null;
+      }
+      const customPlayer = document.getElementById('custom-audio-player');
+      customPlayer.pause();
+    }
+
+    // =========================================================
+    // CUSTOMIZER STUDIO LOGIC
+    // =========================================================
+    function openCustomizer() {
+      document.getElementById('edit-passcode').value = appData.passcode;
+      document.getElementById('edit-hint').value = appData.hint;
+      document.getElementById('edit-badge').value = appData.badgeText;
+      document.getElementById('edit-letter-greeting').value = appData.letterGreeting;
+      document.getElementById('edit-letter-signature').value = appData.letterSignature;
+      document.getElementById('edit-letter-body').value = appData.letterBody;
+      document.getElementById('edit-song-title').value = appData.songTitle;
+      document.getElementById('edit-song-note').value = appData.songNote;
+
+      renderCustomizerMemories();
+      openModal('modal-customizer');
+    }
+
+    function renderCustomizerMemories() {
+      const list = document.getElementById('edit-memories-list');
+      list.innerHTML = appData.memories.map((m, i) => `
+        <div class="flex items-center gap-2 bg-purple-50/70 p-2 rounded-xl">
+          <img src="${m.url}" class="w-10 h-10 rounded-lg object-cover shrink-0" />
+          <input
+            type="text"
+            value="${m.caption.replace(/"/g, '&quot;')}"
+            onchange="updateMemoryCaption(${i}, this.value)"
+            class="flex-1 px-2.5 py-1 text-xs rounded-lg border border-[#D5BCF0] bg-white"
+          />
+          <button onclick="removeMemory(${i})" class="text-rose-500 hover:text-rose-700 font-bold px-2">✕</button>
+        </div>
+      `).join('');
+    }
+
+    function updateMemoryCaption(idx, val) {
+      appData.memories[idx].caption = val;
+    }
+
+    function removeMemory(idx) {
+      if (appData.memories.length <= 1) {
+        showToast('Keep at least 1 memory photo! ♡');
+        return;
+      }
+      appData.memories.splice(idx, 1);
+      renderCustomizerMemories();
+    }
+
+    function handleMainPhotoUpload(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        appData.mainPhoto = e.target.result;
+        document.getElementById('main-couple-photo').src = e.target.result;
+        showToast('Cover photo updated! ♡');
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function handleAddMemoryPhoto(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        appData.memories.push({
+          url: e.target.result,
+          caption: 'Our sweet memory ♡'
+        });
+        renderCustomizerMemories();
+        showToast('Added to Polaroid gallery! ♡');
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function handleAudioUpload(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      customAudioSrc = URL.createObjectURL(file);
+      showToast('Custom audio loaded! ♡');
+    }
+
+    function saveCustomization() {
+      const rawCode = document.getElementById('edit-passcode').value.replace(/\D/g, '');
+      if (rawCode.length === 4) {
+        appData.passcode = rawCode;
+      }
+      appData.hint = document.getElementById('edit-hint').value || appData.hint;
+      appData.badgeText = document.getElementById('edit-badge').value || appData.badgeText;
+      appData.letterGreeting = document.getElementById('edit-letter-greeting').value;
+      appData.letterSignature = document.getElementById('edit-letter-signature').value;
+      appData.letterBody = document.getElementById('edit-letter-body').value;
+      appData.songTitle = document.getElementById('edit-song-title').value;
+      appData.songNote = document.getElementById('edit-song-note').value;
+
+      persistAppData();
+      applyDataToUI();
+      closeModal('modal-customizer');
+      showToast('Your scrapbook gift has been saved! ♡');
+    }
+
+    function resetToDefaults() {
+      appData = JSON.parse(JSON.stringify(DEFAULT_DATA));
+      customAudioSrc = null;
+      localStorage.removeItem('anniversary_scrapbook_v1');
+      applyDataToUI();
+      openCustomizer();
+      showToast('Reset to original template ♡');
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast-msg');
+      toast.textContent = msg;
+      toast.classList.remove('hidden');
+      setTimeout(() => toast.classList.add('hidden'), 2400);
+    }
+  </script>
+</body>
+</html>
