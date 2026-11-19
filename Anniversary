@@ -1,0 +1,7 @@
+echo "# 9yrs" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/angelcipres23-creator/9yrs.git
+git push -u origin main
